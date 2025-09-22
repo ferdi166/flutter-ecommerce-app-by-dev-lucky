@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "114850631367",
+    "project_id": "e-commerce-dev-lucky",
+    "storage_bucket": "e-commerce-dev-lucky.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114850631367:android:4033d82996b4ef8bd538e2",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh8BWyIpqTx8u89j-Kn2QaqWhf23eDsqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -41,6 +41,9 @@ dependencies:
   get_storage: ^2.1.1 # Tambahkan baris ini
   share_plus: ^11.0.0
   lottie: ^2.7.0
+  firebase_core: ^4.1.0
+  firebase_auth: ^6.0.2
+  cloud_firestore: ^6.0.0
 
 dev_dependencies:
   flutter_test:
