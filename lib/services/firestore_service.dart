@@ -129,4 +129,33 @@ class FirestoreService {
       return false;
     }
   }
+
+  // Delete user document (for account deletion)
+  static Future<bool> deleteUserDocument(String uid) async {
+    try {
+      await _firestore.collection(_usersCollection).doc(uid).delete();
+
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // check if user document exists
+  static Future<bool> userDocumentExists(String uid) async {
+    try {
+      final doc = await _firestore.collection(_usersCollection).doc(uid).get();
+
+      return doc.exists;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // get user stream for real-time updates
+  static Stream<DocumentSnapshot<Map<String, dynamic>>> getUserStream(
+    String uid,
+  ) {
+    return _firestore.collection(_usersCollection).doc(uid).snapshots();
+  }
 }
