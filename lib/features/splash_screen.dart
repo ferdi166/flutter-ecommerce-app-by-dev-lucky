@@ -5,10 +5,35 @@ import 'package:ecommerce_app/features/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   SplashScreen({super.key});
 
-  AuthController authController = Get.find<AuthController>();
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  final AuthController authController = Get.find<AuthController>();
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeApp();
+  }
+
+  void _initializeApp() async {
+    // wait for firebase auth state to be determinated
+    await Future.delayed(Duration(milliseconds: 2500));
+
+    // navigate based on auth state
+    if (authController.isFirstTime) {
+      Get.off(() => OnboardingScreen());
+    } else if (authController.isLoggedIn) {
+      Get.off(() => OnboardingScreen());
+    } else {
+      Get.off(() => SigninScreen());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
